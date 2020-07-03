@@ -1,0 +1,7 @@
+.purple-border textarea {
+    border: 1px solid #ba68c8;
+    width : 150px;
+}
+.right {
+    position: absolute;
+}

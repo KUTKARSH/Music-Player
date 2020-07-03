@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Player.css">
+</head>
+
+
+<br>
+<body>
+    <script src="Player.js">
+    </script>
+    <div class="form-group purple-border">
+        <label for="exampleFormControlTextarea4"><h1>Now Playing</h1></label>
+        <textarea maxlength = "10" id = "songNameBox" class="form-control" id="exampleFormControlTextarea4" rows="1"></textarea>
+    </div>
+    <ul class = "right" id = "songsMenu">
+    </ul>        
+    <br>
+    <br>
+    <audio id="myAudio">
+        <source src="ipl.mp3" type="audio/mpeg" id = "player">
+        Your browser does not support the audio element.
+    </audio>
+    <button style="font-size:24px" onclick = "playSong()" type = "button" class="btn btn-success" >
+        Play
+    </button>
+    <button style="font-size:24px" onclick = "pauseSong()" type = "button" class="btn btn-warning">
+        Pause
+    </button>
+    <br><br>
+    <button style="font-size:24px" id="change" onclick="changeSong()" class="btn btn-info">
+        Change
+    </button>
+</body>
+
+</html>
+
+
