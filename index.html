@@ -16,27 +16,36 @@
     <script src="Player.js">
     </script>
     <div class="form-group purple-border">
-        <label for="exampleFormControlTextarea4"><h1>Now Playing</h1></label>
+        <label for="exampleFormControlTextarea4"><h1><b><i>Now Playing</i></b></h1></label>
         <textarea maxlength = "10" id = "songNameBox" class="form-control" id="exampleFormControlTextarea4" rows="1"></textarea>
     </div>
-    <ul class = "right" id = "songsMenu">
-    </ul>        
-    <br>
     <br>
     <audio id="myAudio">
         <source src="ipl.mp3" type="audio/mpeg" id = "player">
         Your browser does not support the audio element.
     </audio>
-    <button style="font-size:24px" onclick = "playSong()" type = "button" class="btn btn-success" >
+    <button style="font-size:24px" onclick = "playSong()" type = "button" class="button button1">
         Play
     </button>
-    <button style="font-size:24px" onclick = "pauseSong()" type = "button" class="btn btn-warning">
+    <button style="font-size:24px" onclick = "pauseSong()" type = "button" class="button button2">
         Pause
     </button>
     <br><br>
-    <button style="font-size:24px" id="change" onclick="changeSong()" class="btn btn-info">
+    <button style="font-size:24px" id="change" onclick="changeSong()" class="button button3">
         Change
     </button>
+    <br>
+    <h3><b><i>Genres</i></b></h3>
+    <button style="font-size:24px" id="change" onclick="selectGenre(1);" class="button button4">
+        Romantic
+    </button>
+    <button style="font-size:24px" id="change" onclick="selectGenre(2);" class="button button4">
+        Dance
+    </button>
+    <button style="font-size:24px" id="change" onclick="selectGenre(3);" class="button button4">
+        Energy
+    </button> 
+    <br>
 </body>
 
 </html>
