@@ -1,6 +1,6 @@
 var songsList = [];
 var romantic = ["dekhte.mp3","urvashi.mp3"];
-var dance = ["gungroo.mp3","shiv.mp3"];
+var dance = ["gungroo.mp3","shiv.mp3","tu meri.mp3"];
 var energy = ["ipl.mp3","jai.mp3"];
 
 var songId = 0;
@@ -11,10 +11,33 @@ window.onload = function(){
     songId = 0;
 }
 
+// Logic to render list of songs
 function renderSongsMenu(){
-
+    // to empty all items of current songs list
+    var divElem = document.getElementById("songsList");
+    console.log(divElem);
+    console.log(divElem.childElementCount);
+    let count = divElem.childElementCount;
+    for(let i = 0; i < divElem.childElementCount ; i++)
+    {
+        divElem.removeChild(divElem.childNodes[0]);
+    }
+    divElem.removeChild(divElem.childNodes[0]);
+    ////////////////////////////////////////////////////////
+    // to populate new list based on genre
+    var cont = document.getElementById('container');
+    for (let i = 0; i <= songsList.length - 1; i++) {
+                var a = document.createElement('a');
+                var value = document.createTextNode(songsList[i].slice(0,-4));
+                a.setAttribute('href', '');
+                a.setAttribute('class',"list-group-item");
+                a.appendChild(value);
+                divElem.append(a);
+    }
+    cont.appendChild(divElem);
 }
 
+// to change playlist based on genre and reset index variables
 function selectGenre(id){
     if(id == 1)
     songsList = romantic;
@@ -24,48 +47,30 @@ function selectGenre(id){
     songsList = energy;
     songId = 0;
     console.log("genre id " + id + " selected");
+    renderSongsMenu();
 }
 
-function playSong(i){
+// to play song from current genre
+function playSong(){
     console.log("song playing");
     document.getElementById("songNameBox").innerHTML = songsList[songId];
+    document.getElementById("myAudio").src = "./songs/" + songsList[songId];
     document.getElementById("myAudio").play();
 }
 
+// to 
 function pauseSong(){
     document.getElementById("myAudio").pause();
 }
 
+// to change song to next song in genre
 function changeSong(){
     songId = (songId + 1) % songsList.length;
     console.log("Song changed to " + songsList[songId]);
     document.getElementById("songNameBox").innerHTML = songsList[songId];
     document.getElementById("myAudio").src = "";
-    document.getElementById("myAudio").src = songsList[songId];
+    document.getElementById("myAudio").src = "./songs/" + songsList[songId];
     playSong();
 }
-
-// window.onload = function displayMenu(){
-//     for(var i = 0 ; i < songsList.length ; i++)
-//     map.set(songsList[i],i);
-//     var cont = document.getElementById('container');
-//     var divElem = document.getElementById('dropupMenu');
-//     for (i = 0; i <= songsList.length - 1; i++) {
-//         var a = document.createElement('a');
-//         var value = document.createTextNode(songsList[i]);
-//         a.setAttribute('href', '');
-//         a.addEventListener('click',function(){
-//             var songName = a.innerHTML;
-//             console.log(songName + " select")
-//             var idx = map.get(songName);
-//             console.log(idx + " is index");
-//             songId = idx;
-//             playSong();
-//         });
-//         a.appendChild(value);
-//         divElem.appendChild(a);
-//     }
-//     cont.appendChild(divElem);
-// }
 
  

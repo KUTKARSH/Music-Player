@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="Player.css">
 </head>
 
-
 <br>
 <body>
     <script src="Player.js">
@@ -24,7 +23,7 @@
 
     <br>
     <audio id="myAudio">
-        <source src="ipl.mp3" type="audio/mpeg" id = "player">
+        <source src="" type="audio/mpeg" id = "player">
         Your browser does not support the audio element.
     </audio>
     <button style="font-size:24px" onclick = "playSong()" type = "button" class="button button1">
@@ -49,6 +48,11 @@
         Energy
     </button> 
     <br>
+    <h2>Songs in current Genre</h2>
+    <div class="container" id = "container">
+        <div class="list-group" id = "songsList">
+        </div>
+      </div>
 </body>
 
 </html>
