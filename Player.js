@@ -2,6 +2,7 @@ var songsList = [];
 var romantic = ["dekhte.mp3","urvashi.mp3"];
 var dance = ["gungroo.mp3","shiv.mp3","tu meri.mp3"];
 var energy = ["ipl.mp3","jai.mp3"];
+var playLists = [];
 
 var songId = 0;
 let map = new Map();
@@ -9,6 +10,11 @@ let map = new Map();
 window.onload = function(){
     songsList = [];
     songId = 0;
+    let c = 0;
+    romantic.forEach(element => {
+        map.set(element)
+    });
+
 }
 
 // Logic to render list of songs
@@ -59,17 +65,14 @@ function playSong(){
     }
     console.log("song playing");
     document.getElementById("songNameBox").innerHTML = songsList[songId];
-    document.getElementById("myAudio").src = "./songs/" + songsList[songId];
+    document.getElementById("myAudio").src = songsList[songId];
     document.getElementById("myAudio").play();
-    document.getElementById("play").disabled = true;
-    document.getElementById("pause").disabled = false;
 }
 
 // to 
 function pauseSong(){
     document.getElementById("myAudio").pause();
-    document.getElementById("play").disabled = false;
-    document.getElementById("pause").disabled = true;
+    
 }
 
 // to change song to next song in genre
@@ -78,7 +81,7 @@ function changeSong(){
     console.log("Song changed to " + songsList[songId]);
     document.getElementById("songNameBox").innerHTML = songsList[songId];
     document.getElementById("myAudio").src = "";
-    document.getElementById("myAudio").src = "./songs/" + songsList[songId];
+    document.getElementById("myAudio").src = songsList[songId];
     playSong();
 }
 
