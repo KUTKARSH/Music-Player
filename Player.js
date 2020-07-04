@@ -52,15 +52,24 @@ function selectGenre(id){
 
 // to play song from current genre
 function playSong(){
+    if(songsList.length == 0)
+    {
+        alert("Please select a genre\nThen select a song");
+        return;
+    }
     console.log("song playing");
     document.getElementById("songNameBox").innerHTML = songsList[songId];
     document.getElementById("myAudio").src = "./songs/" + songsList[songId];
     document.getElementById("myAudio").play();
+    document.getElementById("play").disabled = true;
+    document.getElementById("pause").disabled = false;
 }
 
 // to 
 function pauseSong(){
     document.getElementById("myAudio").pause();
+    document.getElementById("play").disabled = false;
+    document.getElementById("pause").disabled = true;
 }
 
 // to change song to next song in genre

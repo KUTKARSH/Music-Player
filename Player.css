@@ -1,5 +1,6 @@
 .purple-border textarea {
-    border: 1px solid #ba68c8;
+    
+    style="border:groove 6px orange;
     width : 150px;
 }
 .right {

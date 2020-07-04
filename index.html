@@ -18,7 +18,11 @@
         <label for="exampleFormControlTextarea4"><h1><b><i>Now Playing</i></b></h1></label>
         <br>
         <label for="exampleFormControlTextarea4"><h4><b><i>May take some time to play</i></b></h4></label>
-        <textarea maxlength = "10" id = "songNameBox" class="form-control" id="exampleFormControlTextarea4" rows="1"></textarea>
+        <br><br>
+        <textarea rows = "1" cols = "20" id = "songNameBox" cols="50" rows="5" style="border:groove 6px orange;">
+            
+        </textarea>
+        
     </div>
 
     <br>
@@ -26,10 +30,10 @@
         <source src="" type="audio/mpeg" id = "player">
         Your browser does not support the audio element.
     </audio>
-    <button style="font-size:24px" onclick = "playSong()" type = "button" class="button button1">
+    <button id = "play" style="font-size:24px" onclick = "playSong()" type = "button" class="button button1">
         Play
     </button>
-    <button style="font-size:24px" onclick = "pauseSong()" type = "button" class="button button2">
+    <button id = "pause" style="font-size:24px" onclick = "pauseSong()" type = "button" class="button button2">
         Pause
     </button>
     <br><br>
